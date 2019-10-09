@@ -21,6 +21,9 @@ class Vips < Formula
   depends_on "webp"
 
   def install
+    ENV.append 'PKG_CONFIG_PATH',
+      "${Formula['imagemagick@6'].opt_lib}/pkgconfig"
+
     args = %W[
       --disable-dependency-tracking
       --disable-debug
