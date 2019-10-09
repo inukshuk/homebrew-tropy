@@ -2,7 +2,7 @@ class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
   url "https://www.imagemagick.org/download/ImageMagick-6.9.10-68.tar.xz"
-  #sha256 "b963f05fc73ece7b1fa392ff47a5f1fd74ef3a39da25186ee35c3ed47e1f1dd9"
+  sha256 "e1531c741296fa6289210a109d8737d3744652ef8f099f5f6cebdabf2decb2cb"
   head "https://github.com/imagemagick/imagemagick6.git"
 
   bottle do
@@ -25,11 +25,12 @@ class ImagemagickAT6 < Formula
   depends_on "openjpeg"
 
   def install
+    ENV.append 'PKG_CONFIG_PATH',
+      "${Formula['jpeg-turbo'].opt_lib}/pkgconfig"
+
     args = %W[
       --disable-osx-universal-binary
       --prefix=#{prefix}
-      --jpeg-includes=#{Formula["jpeg-turbo"].opt_include}
-      --jpeg-libraries=#{Formula["jpeg-turbo"].opt_lib}
       --disable-dependency-tracking
       --disable-silent-rules
       --disable-opencl
