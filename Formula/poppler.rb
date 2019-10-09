@@ -18,17 +18,17 @@ class Poppler < Formula
   depends_on "freetype"
   depends_on "gettext"
   depends_on "glib"
-  depends_on "jpeg_turbo"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "nss"
   depends_on "openjpeg"
 
-  resource "font-data" do
-    url "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
-    sha256 "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
-  end
+  #resource "font-data" do
+  #  url "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
+  #  sha256 "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
+  #end
 
   def install
     ENV.cxx11
