@@ -37,7 +37,7 @@ class Poppler < Formula
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DCMAKE_BUILD_TYPE=release
       -DCMAKE_CXX_FLAGS=-I#{Formula['jpeg-turbo'].opt_include}
-      -DCMAKE_LD_FLAGS=-L#{Formula['jpeg-turbo'].opt_lib}
+      -DCMAKE_SHARED_LINKER_FLAGS=-L#{Formula['jpeg-turbo'].opt_lib}
       -DBUILD_GTK_TESTS=OFF
       -DBUILD_QT5_TESTS=OFF
       -DBUILD_CPP_TESTS=OFF
