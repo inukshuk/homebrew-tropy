@@ -62,13 +62,13 @@ class Poppler < Formula
     #  system "make", "install", "prefix=#{prefix}"
     #end
 
-    libpoppler = (lib/"libpoppler.dylib").readlink
-    [
-      "#{lib}/libpoppler-glib.dylib"
-    ].each do |f|
-      macho = MachO.open(f)
-      macho.change_dylib("@rpath/#{libpoppler}", "#{lib}/#{libpoppler}")
-      macho.write!
-    end
+    #libpoppler = (lib/"libpoppler.dylib").readlink
+    #[
+    #  "#{lib}/libpoppler-glib.dylib"
+    #].each do |f|
+    #  macho = MachO.open(f)
+    #  macho.change_dylib("@rpath/#{libpoppler}", "#{lib}/#{libpoppler}")
+    #  macho.write!
+    #end
   end
 end
