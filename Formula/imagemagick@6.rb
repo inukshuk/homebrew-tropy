@@ -28,6 +28,8 @@ class ImagemagickAT6 < Formula
     args = %W[
       --disable-osx-universal-binary
       --prefix=#{prefix}
+      --jpeg-includes=#{Formula["jpeg-turbo"].opt_include}
+      --jpeg-libraries=#{Formula["jpeg-turbo"].opt_lib}
       --disable-dependency-tracking
       --disable-silent-rules
       --disable-opencl

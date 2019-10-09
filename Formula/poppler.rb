@@ -34,6 +34,10 @@ class Poppler < Formula
     ENV.cxx11
 
     args = std_cmake_args + %w[
+      -DCMAKE_INSTALL_PREFIX=#{prefix}
+      -DCMAKE_BUILD_TYPE=release
+      -DCMAKE_CXX_FLAGS=-I#{Formula['jpeg-turbo'].opt_include}
+      -DCMAKE_LD_FLAGS=-L#{Formula['jpeg-turbo'].opt_lib}
       -DBUILD_GTK_TESTS=OFF
       -DBUILD_QT5_TESTS=OFF
       -DBUILD_CPP_TESTS=OFF
@@ -46,9 +50,9 @@ class Poppler < Formula
       -DENABLE_SPLASH=OFF
       -DENABLE_LIBCURL=OFF
       -DENABLE_GOBJECT_INTROSPECTION=OFF
-      -DENABLE_ENABLE_ZLIB_UNCOMPRESS=ON
+      -DENABLE_ZLIB_UNCOMPRESS=ON
       -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
-      -DENABLE_LIBOPENJPEG=openjpeg
+      -DENABLE_LIBOPENJPEG=openjpeg2
     ]
 
     system "cmake", ".", *args
