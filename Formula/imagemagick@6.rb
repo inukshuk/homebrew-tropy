@@ -4,15 +4,9 @@ class ImagemagickAT6 < Formula
   url "https://www.imagemagick.org/download/ImageMagick-6.9.10-68.tar.xz"
   sha256 "e1531c741296fa6289210a109d8737d3744652ef8f099f5f6cebdabf2decb2cb"
   head "https://github.com/imagemagick/imagemagick6.git"
+  revision 1
 
-  bottle do
-    sha256 "e339734f14df8c40e341ce7c65b71716af05364b67c150a99a6d77abdb6a4041" => :catalina
-    sha256 "27135af537f6a6439e055ecf806701c5fb9323e4113c5ec7aff2761390b82f77" => :mojave
-    sha256 "0b6fc8fd65ee21827e46ace31ecbc5574f4d1652977291052cdfa2007b814be8" => :high_sierra
-    sha256 "5db0568d8a8d028fdc885642e683a362bdf635b5d3d611135b9bbe2271bf757a" => :sierra
-  end
-
-  keg_only :versioned_formula
+  bottle :unneeded
 
   depends_on "pkg-config" => :build
 

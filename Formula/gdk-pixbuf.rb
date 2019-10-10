@@ -1,9 +1,11 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.38/gdk-pixbuf-2.38.1.tar.xz"
-  sha256 "f19ff836ba991031610dcc53774e8ca436160f7d981867c8c3a37acfe493ab3a"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.40/gdk-pixbuf-2.40.0.tar.xz"
+  sha256 "1582595099537ca8ff3b99c6804350b4c058bb8ad67411bbaae024ee7cead4e6"
   revision 1
+
+  bottle :unneeded
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -71,39 +73,5 @@ class GdkPixbuf < Formula
   def post_install
     ENV["GDK_PIXBUF_MODULEDIR"] = "#{module_dir}/loaders"
     system "#{bin}/gdk-pixbuf-query-loaders", "--update-cache"
-  end
-
-  test do
-    (testpath/"test.c").write <<~EOS
-      #include <gdk-pixbuf/gdk-pixbuf.h>
-
-      int main(int argc, char *argv[]) {
-        GType type = gdk_pixbuf_get_type();
-        return 0;
-      }
-    EOS
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    libpng = Formula["libpng"]
-    pcre = Formula["pcre"]
-    flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
-    flags += %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gdk-pixbuf-2.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pcre.opt_include}
-      -D_REENTRANT
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lgdk_pixbuf-2.0
-      -lglib-2.0
-      -lgobject-2.0
-      -lintl
-    ]
-    system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
   end
 end

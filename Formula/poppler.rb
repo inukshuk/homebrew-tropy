@@ -4,12 +4,9 @@ class Poppler < Formula
   url "https://poppler.freedesktop.org/poppler-0.81.0.tar.xz"
   sha256 "212d020b035b67b36c9666bd08ac778dff3222d85c01c338787d546f0f9bfe02"
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
+  revision 1
 
-  bottle do
-    sha256 "9b97533f63d2e09d7fdbeeff064015d43d7490cad118ca559d8c699985e9778c" => :catalina
-    sha256 "c41c9aff6ed97d122c0806da50ed6ec8d9e7df118c38379530bf72850979927e" => :mojave
-    sha256 "b55894e5ad440cd064a7dbac82510d91041d188501a9659f4ba76bef13acbe6d" => :high_sierra
-  end
+  bottle :unneeded
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -33,7 +30,7 @@ class Poppler < Formula
   def install
     ENV.cxx11
 
-    args = std_cmake_args + %w[
+    args = std_cmake_args + %W[
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DCMAKE_BUILD_TYPE=release
       -DCMAKE_CXX_FLAGS=-I#{Formula['jpeg-turbo'].opt_include}
