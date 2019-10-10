@@ -6,8 +6,6 @@ class ImagemagickAT6 < Formula
   head "https://github.com/imagemagick/imagemagick6.git"
   revision 1
 
-  bottle :unneeded
-
   depends_on "pkg-config" => :build
 
   depends_on "fftw"

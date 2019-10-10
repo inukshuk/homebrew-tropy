@@ -4,7 +4,8 @@ class Libvips < Formula
   url "https://github.com/libvips/libvips/releases/download/v8.8.1/vips-8.8.1.tar.gz"
   sha256 "a0ee255a2a1ebfea5b2dff2a780824d7157a78c010d7ddd531279aacefbf2539"
 
-  conflicts_with 'vips', :because => 'homebrew-core version of the same formula'
+  conflicts_with 'vips',
+    :because => 'homebrew-core version of the same formula'
 
   depends_on "pkg-config" => :build
   depends_on "fftw"

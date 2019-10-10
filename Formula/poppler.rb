@@ -6,8 +6,6 @@ class Poppler < Formula
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
   revision 1
 
-  bottle :unneeded
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo"
@@ -17,7 +15,7 @@ class Poppler < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libtiff"
+  depends_on "inukshuk/tropy/libtiff"
   depends_on "little-cms2"
   depends_on "nss"
   depends_on "openjpeg"

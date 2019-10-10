@@ -5,8 +5,6 @@ class GdkPixbuf < Formula
   sha256 "1582595099537ca8ff3b99c6804350b4c058bb8ad67411bbaae024ee7cead4e6"
   revision 1
 
-  bottle :unneeded
-
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
