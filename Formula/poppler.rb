@@ -15,7 +15,7 @@ class Poppler < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "inukshuk/tropy/libtiff"
+  depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "nss"
   depends_on "openjpeg"
