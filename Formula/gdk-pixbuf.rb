@@ -13,7 +13,7 @@ class GdkPixbuf < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libtiff"
+  depends_on "inukshuk/tropy/libtiff"
 
   # gdk-pixbuf has an internal version number separate from the overall
   # version number that specifies the location of its module and cache
