@@ -15,10 +15,6 @@ class Webp1 < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "jpeg-turbo"
-  depends_on "libpng"
-  depends_on "libtiff"
-
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}",
