@@ -19,10 +19,10 @@ class Libvips < Formula
   depends_on "libpng"
   depends_on "inukshuk/tropy/librsvg2"
   depends_on "inukshuk/tropy/libtiff4"
-  depends_on "little-cms2"
+  depends_on "inukshuk/tropy/lcms2"
   depends_on "orc"
   depends_on "inukshuk/tropy/poppler8"
-  depends_on "webp"
+  depends_on "inukshuk/tropy/webp1"
 
   def install
     args = %W[

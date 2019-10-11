@@ -17,7 +17,7 @@ class Imagemagick6 < Formula
   depends_on "libpng"
   depends_on "inukshuk/tropy/libtiff4"
   depends_on "libtool"
-  depends_on "little-cms2"
+  depends_on "inukshuk/tropy/lcms2"
   depends_on "openjpeg"
 
   def install
