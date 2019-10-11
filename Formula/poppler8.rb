@@ -6,6 +6,8 @@ class Poppler8 < Formula
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
 
   bottle :unneeded
+  conflicts_with "poppler",
+    :because => "homebrew-core version of the same formula"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -16,9 +18,9 @@ class Poppler8 < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "inukshuk/tropy/libtiff4"
-  depends_on "little-cms2"
+  depends_on "inukshuk/tropy/lcms2"
   depends_on "nss"
-  depends_on "openjpeg"
+  depends_on "inukshuk/tropy/openjpeg2"
 
   #resource "font-data" do
   #  url "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
@@ -46,7 +48,7 @@ class Poppler8 < Formula
       -DENABLE_LIBCURL=OFF
       -DENABLE_GOBJECT_INTROSPECTION=OFF
       -DENABLE_ZLIB_UNCOMPRESS=ON
-      -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
+      -DENABLE_UNSTABLE_API_ABI_HEADERS=OFF
       -DENABLE_LIBOPENJPEG=openjpeg2
     ]
 

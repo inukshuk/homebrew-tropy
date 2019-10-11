@@ -18,7 +18,7 @@ class Imagemagick6 < Formula
   depends_on "inukshuk/tropy/libtiff4"
   depends_on "libtool"
   depends_on "inukshuk/tropy/lcms2"
-  depends_on "openjpeg"
+  depends_on "inukshuk/tropy/openjpeg2"
 
   def install
     ENV.append 'PKG_CONFIG_PATH',
