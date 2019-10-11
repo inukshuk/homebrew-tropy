@@ -15,7 +15,7 @@ class Libvips < Formula
   depends_on "inukshuk/tropy/imagemagick6"
   depends_on "jpeg-turbo"
   depends_on "libexif"
-  depends_on "libheif"
+  depends_on "inukshuk/tropy/libheif1"
   depends_on "libpng"
   depends_on "inukshuk/tropy/librsvg2"
   depends_on "inukshuk/tropy/libtiff4"
