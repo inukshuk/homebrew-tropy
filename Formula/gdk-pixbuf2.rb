@@ -6,7 +6,7 @@ class GdkPixbuf2 < Formula
 
   bottle :unneeded
 
-  conflicts_with "gdk_pixbuf",
+  conflicts_with "gdk-pixbuf",
     :because => "homebrew-core version of the same formula"
 
   depends_on "meson" => :build
