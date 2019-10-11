@@ -4,7 +4,7 @@ class Imagemagick6 < Formula
   url "https://www.imagemagick.org/download/ImageMagick-6.9.10-68.tar.xz"
   sha256 "e1531c741296fa6289210a109d8737d3744652ef8f099f5f6cebdabf2decb2cb"
   head "https://github.com/imagemagick/imagemagick6.git"
-  revision 1
+  revision 2
 
   bottle :unneeded
   conflicts_with "imagemagick@6",
@@ -12,10 +12,8 @@ class Imagemagick6 < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "fftw"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "inukshuk/tropy/libtiff4"
   depends_on "libtool"
   depends_on "inukshuk/tropy/lcms2"
   depends_on "inukshuk/tropy/openjpeg2"
@@ -35,8 +33,11 @@ class Imagemagick6 < Formula
       --enable-shared
       --disable-static
       --with-openjp2
+      --without-modules
+      --without-bzlib
       --without-djvu
       --without-dps
+      --without-fftw
       --without-flif
       --without-fpx
       --without-freetype
@@ -46,14 +47,16 @@ class Imagemagick6 < Formula
       --without-lqr
       --without-lzma
       --without-magick-plus-plus
-      --without-modules
       --without-openexr
       --without-pango
       --without-raqm
+      --without-raw
       --without-rsvg
+      --without-tiff
       --without-webp
       --without-wmf
       --without-x
+      --without-xml
       --without-zlib
       --without-zstd
     ]
