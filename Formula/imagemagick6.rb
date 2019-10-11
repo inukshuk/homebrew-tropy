@@ -19,8 +19,8 @@ class Imagemagick6 < Formula
   depends_on "inukshuk/tropy/openjpeg2"
 
   def install
-    ENV.append 'PKG_CONFIG_PATH',
-      "#{Formula['jpeg-turbo'].opt_lib}/pkgconfig"
+    #ENV.append 'PKG_CONFIG_PATH',
+    #  "#{Formula['jpeg-turbo'].opt_lib}/pkgconfig"
 
     args = %W[
       --disable-osx-universal-binary
