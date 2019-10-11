@@ -1,11 +1,14 @@
-class GdkPixbuf < Formula
+class GdkPixbuf2 < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
   url "https://download.gnome.org/sources/gdk-pixbuf/2.40/gdk-pixbuf-2.40.0.tar.xz"
   sha256 "1582595099537ca8ff3b99c6804350b4c058bb8ad67411bbaae024ee7cead4e6"
-  revision 1
 
-  depends_on "gobject-introspection" => :build
+  bottle :unneeded
+
+  conflicts_with "gdk_pixbuf",
+    :because => "homebrew-core version of the same formula"
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
@@ -13,7 +16,6 @@ class GdkPixbuf < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libtiff"
 
   # gdk-pixbuf has an internal version number separate from the overall
   # version number that specifies the location of its module and cache
@@ -36,8 +38,12 @@ class GdkPixbuf < Formula
       --prefix=#{prefix}
       -Dx11=false
       -Ddocs=false
-      -Dgir=true
+      -Dgir=false
+      -Dtiff=false
+      -Dman=false
       -Drelocatable=false
+      -Dinstalled_tests=false
+      -Dgio_sniffing=false
       -Dnative_windows_loaders=false
       -Dinstalled_tests=false
       -Dman=false

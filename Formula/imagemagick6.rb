@@ -1,4 +1,4 @@
-class ImagemagickAT6 < Formula
+class Imagemagick6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
   url "https://www.imagemagick.org/download/ImageMagick-6.9.10-68.tar.xz"
@@ -6,19 +6,23 @@ class ImagemagickAT6 < Formula
   head "https://github.com/imagemagick/imagemagick6.git"
   revision 1
 
+  bottle :unneeded
+  conflicts_with "imagemagick@6",
+    :because => "homebrew-core version of the same formula"
+
   depends_on "pkg-config" => :build
 
   depends_on "fftw"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libtiff"
+  depends_on "inukshuk/tropy/libtiff4"
   depends_on "libtool"
   depends_on "little-cms2"
   depends_on "openjpeg"
 
   def install
     ENV.append 'PKG_CONFIG_PATH',
-      "${Formula['jpeg-turbo'].opt_lib}/pkgconfig"
+      "#{Formula['jpeg-turbo'].opt_lib}/pkgconfig"
 
     args = %W[
       --disable-osx-universal-binary
@@ -64,7 +68,7 @@ class ImagemagickAT6 < Formula
     assert_match "PNG", shell_output("#{bin}/identify #{test_fixtures("test.png")}")
     # Check support for recommended features and delegates.
     features = shell_output("#{bin}/convert -version")
-    %w[jp2 png].each do |feature|
+    %w[jp2 jpeg png].each do |feature|
       assert_match feature, features
     end
   end

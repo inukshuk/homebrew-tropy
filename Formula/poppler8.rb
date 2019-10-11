@@ -1,21 +1,21 @@
-class Poppler < Formula
+class Poppler8 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
   url "https://poppler.freedesktop.org/poppler-0.81.0.tar.xz"
   sha256 "212d020b035b67b36c9666bd08ac778dff3222d85c01c338787d546f0f9bfe02"
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
-  revision 1
+
+  bottle :unneeded
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libtiff"
+  depends_on "inukshuk/tropy/libtiff4"
   depends_on "little-cms2"
   depends_on "nss"
   depends_on "openjpeg"
