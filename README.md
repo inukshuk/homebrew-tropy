@@ -1,12 +1,8 @@
-# package-libvips-darwin
+# homebrew-libvips
 
-Uses Travis CI to generate a binary tarball
-of libvips and its dependencies for use with
-[sharp](https://github.com/lovell/sharp) on OS X.
+Homebrew formulae to build
+[libvips](https:/github.com/libvips/libvips)
+and its dependencies for use with
+[sharp](https://github.com/lovell/sharp) in
+[tropy](https://github.com/tropy/tropy) on macOS.
 
-Builds dylib files via homebrew
-then modifies their depedency paths to be
-the relative `@rpath` using `install_name_tool`.
-
-The resulting file is transferred to S3 by setting
-[various environment variables](https://docs.travis-ci.com/user/uploading-artifacts/).
