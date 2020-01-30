@@ -1,8 +1,8 @@
 class Libvips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.8.1/vips-8.8.1.tar.gz"
-  sha256 "a0ee255a2a1ebfea5b2dff2a780824d7157a78c010d7ddd531279aacefbf2539"
+  url "https://github.com/libvips/libvips/releases/download/v8.9.0/vips-8.9.0.tar.gz"
+  sha256 "97334a5e70aff343d2587f23cb8068fc846a58cd937c89a446142ccf00ea0349"
 
   bottle :unneeded
   conflicts_with 'vips',

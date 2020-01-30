@@ -1,9 +1,9 @@
 class Libtiff4 < Formula
   desc "TIFF library and utilities"
   homepage "http://libtiff.maptools.org/"
-  url "https://download.osgeo.org/libtiff/tiff-4.0.10.tar.gz"
-  mirror "https://fossies.org/linux/misc/tiff-4.0.10.tar.gz"
-  sha256 "2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4"
+  url "https://download.osgeo.org/libtiff/tiff-4.1.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/tiff-4.1.0.tar.gz"
+  sha256 "5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634"
 
   bottle :unneeded
 
