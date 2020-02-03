@@ -12,15 +12,6 @@ class Libtiff4 < Formula
 
   depends_on "jpeg-turbo"
 
-  # Patches are taken from latest Fedora package, which is currently
-  # libtiff-4.0.10-2.fc30.src.rpm and whose changelog is available at
-  # https://apps.fedoraproject.org/packages/libtiff/changelog/
-
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/d15e00544e7df009b5ad34f3b65351fc249092c0/libtiff/libtiff-CVE-2019-6128.patch"
-    sha256 "dbec51f5bec722905288871e3d8aa3c41059a1ba322c1ac42ddc8d62646abc66"
-  end
-
   def install
     args = %W[
       --prefix=#{prefix}
