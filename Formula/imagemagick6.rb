@@ -15,8 +15,8 @@ class Imagemagick6 < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtool"
-  depends_on "inukshuk/tropy/lcms2"
-  depends_on "inukshuk/tropy/openjpeg2"
+  depends_on "tropy/libvips/lcms2"
+  depends_on "tropy/libvips/openjpeg2"
 
   def install
     #ENV.append 'PKG_CONFIG_PATH',

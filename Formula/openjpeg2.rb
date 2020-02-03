@@ -11,8 +11,8 @@ class Openjpeg2 < Formula
 
   depends_on "cmake" => :build
   depends_on "libpng"
-  depends_on "inukshuk/tropy/libtiff4"
-  depends_on "inukshuk/tropy/lcms2"
+  depends_on "tropy/libvips/libtiff4"
+  depends_on "tropy/libvips/lcms2"
 
   def install
     system "cmake", ".", *std_cmake_args

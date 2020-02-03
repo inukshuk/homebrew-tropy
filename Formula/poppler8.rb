@@ -17,10 +17,10 @@ class Poppler8 < Formula
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "inukshuk/tropy/libtiff4"
-  depends_on "inukshuk/tropy/lcms2"
+  depends_on "tropy/libvips/libtiff4"
+  depends_on "tropy/libvips/lcms2"
   depends_on "nss"
-  depends_on "inukshuk/tropy/openjpeg2"
+  depends_on "tropy/libvips/openjpeg2"
 
   #resource "font-data" do
   #  url "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"

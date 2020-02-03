@@ -12,7 +12,7 @@ class Librsvg2 < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cairo"
-  depends_on "inukshuk/tropy/gdk-pixbuf2"
+  depends_on "tropy/libvips/gdk-pixbuf2"
   depends_on "glib"
   depends_on "libcroco"
   depends_on "pango"
